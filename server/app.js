@@ -25,7 +25,9 @@ var _http2 = _interopRequireDefault(_http);
 _mongoose2['default'].Promise = require('bluebird');
 
 console.log(process.env.MONGODB_URI);
-console.log(process.env.GES_URI);
+console.log('http://' + process.env.GES_PORT_80_TCP_ADDR + ':' + process.env.GES_PORT_80_TCP_PORT);
+console.log('http://' + process.env.GES_PORT_8080_TCP_ADDR + ':' + process.env.GES_PORT_8080_TCP_PORT);
+console.log('http://' + process.env.GES_PORT_81_TCP_ADDR + ':' + process.env.GES_PORT_81_TCP_PORT);
 
 // Connect to MongoDB
 _mongoose2['default'].connect(_configEnvironment2['default'].mongo.uri, _configEnvironment2['default'].mongo.options);
