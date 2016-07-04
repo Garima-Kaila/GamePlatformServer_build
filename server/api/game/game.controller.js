@@ -40,6 +40,10 @@ var _constants = require('../../constants');
 
 var _constants2 = _interopRequireDefault(_constants);
 
+var _configEnvironment = require('../../config/environment');
+
+var _configEnvironment2 = _interopRequireDefault(_configEnvironment);
+
 var _componentsLogger = require('../../components/logger');
 
 var logger = _interopRequireWildcard(_componentsLogger);
@@ -130,9 +134,11 @@ function destroy(req, res) {
 
 function play(req, res, next) {
   logger.log(0, "game.controller", "play", req.Game);
+  logger.log(0, "game.controller", "config.ges.uri ", _configEnvironment2['default'].ges.uri);
   // todo : must have game and action in the req.Game.rawReq
+
   var options = {
-    url: GLOBAL.config[_constants2['default'].configurationKeys.gameServerUrl] + "/api/execute",
+    url: _configEnvironment2['default'].ges.uri + "/api/execute",
     method: "POST",
     headers: {
       "Content-type": "application/json"
