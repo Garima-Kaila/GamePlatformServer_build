@@ -25,6 +25,8 @@ var _http2 = _interopRequireDefault(_http);
 _mongoose2['default'].Promise = require('bluebird');
 
 console.log(process.env.MONGODB_URI);
+console.log(process.env.GES_URI);
+
 // Connect to MongoDB
 _mongoose2['default'].connect(_configEnvironment2['default'].mongo.uri, _configEnvironment2['default'].mongo.options);
 _mongoose2['default'].connection.on('error', function (err) {
